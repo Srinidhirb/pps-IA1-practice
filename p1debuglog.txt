@@ -1,0 +1,36 @@
+Breakpoint 1, main () at p1original.c:16
+16  {
+(gdb) n
+18    input(&a,&b);
+(gdb) s
+input (a=0x7fffc77bf96c, b=0x7fffc77bf970) at p1original.c:4
+4     printf("enter the numbers:\n");
+(gdb) n
+enter the numbers:
+5     scanf("%d%d",a,b);
+(gdb) n
+3
+4
+6   }
+(gdb) n
+main () at p1original.c:19
+19    add(a,b,&c);
+(gdb) s
+add (a=3, b=4, sum=0x7fffc77bf974) at p1original.c:9
+9     *sum=a+b;
+(gdb) n
+10  }
+(gdb) n
+main () at p1original.c:20
+20    output(a,b,c);
+(gdb) n
+21    return 0;
+(gdb) n
+22  }
+(gdb) quit
+A debugging session is active.
+
+    Inferior 1 [process 424] will be killed.
+
+Quit anyway? (y or n) y
+ ^C
