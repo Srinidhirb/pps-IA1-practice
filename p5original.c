@@ -9,9 +9,14 @@ float input()
 }
 float my_sqrt(float n)
 {
-  float result,temp;
-  result=sqrt(n);
-  return result;
+ float guess =n/2;
+ float next = n/guess;
+ while(fabs(guess-next)>0.000001)
+ {
+   guess=(guess+next)/2;
+   next=n/guess;
+ }
+return guess;
 }
 void output(float n, float sqrt_result)
 {
@@ -19,9 +24,9 @@ void output(float n, float sqrt_result)
 }
 int main()
 {
-  int a,b;
+  float  a,b;
   a=input();
-b=my_sqrt(a);
+   b=my_sqrt(a);
 output(a,b);
 return 0;
 }
