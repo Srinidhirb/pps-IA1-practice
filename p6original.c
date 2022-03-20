@@ -1,4 +1,4 @@
-
+   
 #include<stdio.h>
 #include<string.h>
 void input_two_string(char *a, char *b)
@@ -8,31 +8,21 @@ void input_two_string(char *a, char *b)
 }
 int  stringcmp(char *a, char *b)
 {
-  int i;
+  int i=0;
   // !=
-  for(i=0;a[i]!='\0' && b[i]!='\0';i++)
+  while(a[i]==b[i])
   {
-    if(a[i]>b[i])
-    {
-      return 1;
-    }
-    if(a[i]<b[i])
-    {
-      return -1;
-    }
-    if(a[i]==b[i])
-    {
-      continue;
-    }
+   i++; 
   }
+  return a[i]-b[i];
 }
 void output(char *a, char *b, int result)
 {
-  if(result==1)
+  if(result>0)
   printf("%s is greater than %s",a,b);
- if(result==-1)
+ else if(result<0)
  printf("%s is greater than %s",b,a);
- if(result==0)
+ else 
  printf("%s is equal to %s",a,b);
 }
 int main()
